@@ -27,10 +27,15 @@ public class NumberToWordInputValidator {
 		      System.out.println("Please Enter value");
 
 			 while ((number = sc.nextInt()) != 0) {
+			 	if(number>0) {
 				  System.out.println("You entered " + number);
 				  String word= NumbertoWordConverterService.covertNmToString(number);
 				  System.out.printf(" %d -->  Equilent British english word is '%s' %n",number,word);
 			      System.out.println("Please Enter value");
+			 	}else {
+			 		System.out.println("Please enter valid integer");
+			 		 readValue(sc);
+			 	}
 			 }
 		}catch(InputMismatchException e) {
 			sc.next();
